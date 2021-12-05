@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/libs/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../static/libs/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../static/css/User/User_Settings.min.css">
+</head>
+<body>
+    <section class="basic">
+        <div class="container">
+            <div class="basic__region">
+                <div class="basic__region_title">Tanlangan viloyat :</div>
+                <div class="basic__region_desc">{{ region }}</div>
+            </div>
+            <div class="basic__product">
+                <div class="basic__product_title">Mahsulotlar:</div>
+                <div class="basic__product_add">
+                    <div class="basic__product_add-btn">Mahsulot qoshish</div>
+                </div>
+                <div class="basic__product_items">
+                    <div class="basic__product_items_item">
+                        {{ product_name }}
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="basic__desc">Bozorlar royhati :</div>
+            <div class="basic__markets">
+                <div class="basic__markets-cards">
+                    {% for bozor in bazar_list %}
+                    <div class="basic__markets-cards__item">
+                        <div class="basic__markets-cards__item-img">
+                            <img src="../../static/img/background-images/kayle-kaupanger-J8ksCswaBYo-unsplash.jpg" alt="">
+                        </div>
+                        <div class="basic__markets-cards__item-title">
+                            Bozor nomi: <span>{{ bozor.bazar_name }}</span>
+                        </div>
+                        <div class="basic__markets-cards__item-type">
+                            Bozor turi: <span>{{ product_one.cattegory }}</span>
+                        </div>
+                        <div class="basic__markets-cards__item-distance">
+                            Bozor masofasi: <span>300m</span>
+                        </div>
+                        <a class="basic__markets-cards__item-location">
+
+                            hudud
+
+                        </a>
+                        <div class="basic__markets-cards__item-work-days">
+                            Bozor vaqti: <span>{{ bozor.work_days }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="basic__desc basic__desc_2">Eng yaqin bozor:</div>
+            <div class="basic__near-market">
+                <div class="basic__near-market__card">
+                    <div>
+                        <div class="basic__near-market__card-img">
+                            <img src="../../static/img/background-images/kayle-kaupanger-J8ksCswaBYo-unsplash.jpg" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="basic__near-market__card-title">
+                            Bozor nomi: <span>Marg'it bozor</span>
+                        </div>
+                        <div class="basic__near-market__card-type">
+                            Bozor turi: <span>Oziq-ovqat</span>
+                        </div>
+                        <div class="basic__near-market__card-distance">
+                            Bozor masofasi: <span>200m</span>
+                        </div>
+                        <a class="basic__near-market__card-location">
+                            Hudud
+                        </a>
+                        <div class="basic__near-market__card-work-days">
+                            Bozor ishlash vaqti: <span>dushanbadan shanbagacha</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bozorcom</title>
+    <link rel="stylesheet" href="../../static/libs/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../static/libs/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../static/css/Home/User_Direction_2.min.css">
+</head>
+<body>
+    <section class="basic">
+        <div class="container">
+            <div class="basic-wrapper">
+                <div class="basic-wrapper__seller">
+                    <a href="" class="basic-wrapper__seller_btn btn">Sotuvchi</a>
+                </div>
+                <div class="basic-wrapper__buyer">
+                    <a href="" class="basic-wrapper__buyer_btn btn">Haridor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="overlay">
+    <div class="modal modal__buyer">
+        <div class="modal__close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <form class="modal__content" method="post" action="{{ url_for('collectInfo') }}">
+            <div class="modal__content-region">
+                <div class="modal__content-region__desc">Viloyatni tanlang</div>
+                <label for="select_region">
+                    <select name="region" id="select_region">
+                        {% for region in regions %}
+                        <option value="{{ region.region_name }}">{{ region.region_name }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+            <div class="modal__content-category">
+                <div class="modal__content-category__desc">Mahsulot turini tanlang</div>
+                <label for="select_region">
+                    <select name="category" id="select_category">
+                        {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+            <div class="modal__content-name">
+                <div class="modal__content-name__desc">Mahsulot nomini yozing</div>
+                <div>
+                    <label for="name__product">
+                        <input name="product_name" id="name__product" type="text">
+                    </label>
+                </div>
+            </div>
+            <div class="modal__submit">
+                <input type="submit" value="Yuklash">
+            </div>
+
+        </form>
+    </div>
+</div>
+    <script src="static/script/js.js"></script>
+</body>
+</html>
